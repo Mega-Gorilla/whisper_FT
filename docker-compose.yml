@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  whisper-finetune:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: whisper-finetune:latest
+    container_name: whisper-finetune
+    volumes:
+      - ./data:/app/data
+      - ./models:/app/models
+      - ./output:/app/output
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    tty: true
+    stdin_open: true
+    working_dir: /app/whisper-finetune 
