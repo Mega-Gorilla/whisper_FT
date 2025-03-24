@@ -1,5 +1,7 @@
 # Whisper Fine-tuning Docker Project
 
+## 注意:本レポジトリは開発中であり、動作できる状態ではありません。
+
 このプロジェクトは、[vasistalodagala/whisper-finetune](https://github.com/vasistalodagala/whisper-finetune)をベースに、Docker化したWhisperモデルのファインチューニング環境を提供します。
 
 ## 概要
